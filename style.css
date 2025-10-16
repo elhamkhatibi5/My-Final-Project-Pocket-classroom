@@ -58,7 +58,7 @@ body.dark-mode .navbar {
 }
 .capsule-card .card-text {
   font-size: 0.85rem;
-  color: inherit; /* متن همیشه با پس‌زمینه هماهنگ */
+  color: inherit;
 }
 
 /* ===== Flashcards ===== */
