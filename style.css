@@ -1,26 +1,31 @@
+/* =======================
+   Pocket Classroom CSS
+   Light & Dark Mode
+======================= */
 
-/* ===== Body & Theme ===== */
+/* ===== Base Styles ===== */
 body.light-mode {
-  background-color: #f9f9f9;
+  background-color: #fff;
   color: #111;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  transition: background 0.3s, color 0.3s;
+  transition: background-color 0.3s, color 0.3s;
 }
+
 body.dark-mode {
-  background-color: #121212;
-  color: #eee;
-  transition: background 0.3s, color 0.3s;
+  background-color: #111;
+  color: #fff;
+  transition: background-color 0.3s, color 0.3s;
 }
 
 /* ===== Navbar ===== */
 .navbar {
   background-color: #fff;
-  box-shadow: 0 1px 2px rgba(0,0,0,0.1);
   color: #111;
+  transition: background-color 0.3s, color 0.3s;
 }
 body.dark-mode .navbar {
-  background-color: #1f1f1f;
-  color: #ffeb3b;
+  background-color: #111;
+  color: #fff;
 }
 .navbar .nav-link {
   margin-right: 10px;
@@ -31,11 +36,13 @@ body.dark-mode .navbar {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
   gap: 1rem;
+  padding: 1rem 0;
 }
 
 /* ===== Capsule Cards ===== */
 .capsule-card {
   background-color: #fff;
+  color: #111;
   border-radius: 12px;
   overflow: hidden;
   box-shadow: 0 2px 6px rgba(0,0,0,0.1);
@@ -51,6 +58,7 @@ body.dark-mode .navbar {
 }
 .capsule-card .card-text {
   font-size: 0.85rem;
+  color: inherit; /* متن همیشه با پس‌زمینه هماهنگ */
 }
 
 /* ===== Flashcards ===== */
@@ -69,12 +77,16 @@ body.dark-mode .navbar {
   text-align: center;
   padding: 10px;
   perspective: 1000px;
+  background-color: #fff;
+  color: #111;
 }
 
 /* ===== Quiz Container ===== */
 #quizContainer {
   border-radius: 12px;
   padding: 1rem;
+  background-color: #fff;
+  color: #111;
   transition: background-color 0.3s, color 0.3s;
 }
 
@@ -83,53 +95,65 @@ body.dark-mode .navbar {
 #author input,
 #author textarea,
 #author select {
+  background-color: #fff;
+  color: #111;
+  border: 1px solid #ccc;
   transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+}
+
+/* Labels and Titles */
+#author label,
+h5,
+.capsule-card .card-title {
+  color: #111;
 }
 
 /* ===== Buttons ===== */
 .btn {
   border-radius: 6px;
   font-weight: 500;
-  transition: background 0.2s, transform 0.2s;
+  background-color: #fff;
+  color: #111;
+  border: 1px solid #ccc;
+  transition: background-color 0.2s, color 0.2s, transform 0.2s;
 }
 .btn:hover {
   opacity: 0.9;
   transform: translateY(-1px);
 }
 
-/* ===== Dark Mode پایه ===== */
+/* ===== Dark Mode ===== */
+body.dark-mode {
+  background-color: #111;
+  color: #fff;
+}
+
+/* Dark Mode Containers */
 body.dark-mode .capsule-card,
 body.dark-mode .flashcard,
 body.dark-mode #author .card,
-body.dark-mode #quizContainer {
-  background-color: #1f1f1f;
-  color: #eee;
-  border: 1px solid #333;
+body.dark-mode #quizContainer,
+body.dark-mode textarea,
+body.dark-mode input,
+body.dark-mode select {
+  background-color: #111 !important;
+  color: #fff !important;
+  border-color: #444 !important;
 }
 
-/* ===== برچسب‌ها و عناوین ===== */
+/* Dark Mode Labels and Titles */
 body.dark-mode #author label,
-body.dark-mode .capsule-card .card-title,
-body.dark-mode #author h5 {
-  color: #ffeb3b;
-}
+body.dark-mode h5,
 body.dark-mode .capsule-card .card-title {
-  color: #ff5722;
+  color: #fff !important;
 }
-body.dark-mode .capsule-card .card-text {
-  color: #ffc107;
-}
-body.dark-mode .flashcard {
-  color: #00e5ff;
-}
-body.dark-mode button,
+
+/* Dark Mode Buttons */
 body.dark-mode .btn {
-  background-color: #ff5722;
+  background-color: #111;
   color: #fff;
-  border-color: #ff5722;
+  border-color: #444;
 }
-body.dark-mode button:hover,
 body.dark-mode .btn:hover {
-  background-color: #ff784e;
-  border-color: #ff784e;
+  background-color: #222;
 }
