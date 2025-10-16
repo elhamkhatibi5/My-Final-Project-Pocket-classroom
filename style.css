@@ -7,9 +7,8 @@ body.light-mode {
   transition: background 0.3s, color 0.3s;
 }
 body.dark-mode {
-  background-color: #121212;
-  color: #eee !important;
-  transition: background 0.3s, color 0.3s;
+  background-color: #181818;
+  color: #eee;
 }
 
 /* ===== Navbar ===== */
@@ -19,8 +18,8 @@ body.dark-mode {
   color: #111;
 }
 body.dark-mode .navbar {
-  background-color: #1f1f1f;
-  color: #ffeb3b !important;
+  background-color: #202020;
+  color: #eee;
 }
 .navbar .navbar-brand {
   display: flex;
@@ -31,8 +30,45 @@ body.dark-mode .navbar {
   margin-right: 10px;
   font-weight: 500;
 }
-body.dark-mode .nav-link {
-  color: #ffc107 !important;
+.navbar .btn-outline-light {
+  color: #111;
+}
+body.dark-mode .btn-outline-light {
+  color: #eee;
+  border-color: #555;
+}
+
+/* ===== Sidebar ===== */
+#sidebar {
+  background-color: #fff;
+  height: 100vh;
+  padding-top: 1rem;
+  border-right: 1px solid #ddd;
+  position: sticky;
+  top: 0;
+  transition: background 0.3s;
+}
+body.dark-mode #sidebar {
+  background-color: #202020;
+  border-color: #333;
+}
+#sidebar a {
+  display: flex;
+  align-items: center;
+  padding: 0.6rem 1rem;
+  color: #111;
+  text-decoration: none;
+  font-weight: 500;
+  transition: background 0.2s;
+}
+body.dark-mode #sidebar a {
+  color: #eee;
+}
+#sidebar a:hover {
+  background-color: #f1f1f1;
+}
+body.dark-mode #sidebar a:hover {
+  background-color: #333;
 }
 
 /* ===== Capsule Grid (YouTube Style Cards) ===== */
@@ -43,7 +79,6 @@ body.dark-mode .nav-link {
   padding: 1rem 0;
 }
 
-/* ===== Capsule Cards ===== */
 .capsule-card {
   background-color: #fff;
   border-radius: 12px;
@@ -52,6 +87,14 @@ body.dark-mode .nav-link {
   cursor: pointer;
   transition: transform 0.2s, box-shadow 0.2s;
   color: #111;
+}
+body.dark-mode .capsule-card {
+  background-color: #282828;
+  color: #eee !important;
+}
+.capsule-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 15px rgba(0,0,0,0.2);
 }
 .capsule-card img {
   width: 100%;
@@ -69,6 +112,9 @@ body.dark-mode .nav-link {
 .capsule-card .card-text {
   font-size: 0.8rem;
   color: #555;
+}
+body.dark-mode .capsule-card .card-text {
+  color: #eee !important;
 }
 
 /* ===== Flashcards ===== */
@@ -91,6 +137,14 @@ body.dark-mode .nav-link {
   text-align: center;
   padding: 10px;
 }
+.flashcard:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+}
+body.dark-mode .flashcard {
+  background-color: #282828;
+  color: #eee !important;
+}
 
 /* ===== Quiz Container ===== */
 #quizContainer {
@@ -99,6 +153,31 @@ body.dark-mode .nav-link {
   padding: 1rem;
   box-shadow: 0 4px 12px rgba(0,0,0,0.1);
   color: #111;
+}
+body.dark-mode #quizContainer {
+  background-color: #282828;
+  color: #eee !important;
+}
+
+/* ===== Containers & Text in Dark Mode ===== */
+body.dark-mode main,
+body.dark-mode #library,
+body.dark-mode #author,
+body.dark-mode #learn {
+  color: #eee !important;
+}
+body.dark-mode input,
+body.dark-mode textarea,
+body.dark-mode select {
+  background-color: #333;
+  color: #eee;
+  border-color: #555;
+}
+body.dark-mode .form-control:focus,
+body.dark-mode .form-select:focus {
+  background-color: #333;
+  color: #eee;
+  border-color: #888;
 }
 
 /* ===== Buttons ===== */
@@ -119,96 +198,7 @@ footer {
   padding: 1rem 0;
   text-align: center;
 }
-
-/* ===== Dark Mode Styles – جذاب و ترند ===== */
-body.dark-mode {
-  background-color: #121212;
-  color: #eee !important;
-}
-
-/* ===== Navbar Dark Mode ===== */
-body.dark-mode .navbar {
-  background-color: #1f1f1f;
-  color: #ffeb3b !important;
-}
-body.dark-mode .nav-link {
-  color: #ffc107 !important;
-}
-
-/* ===== Capsule Cards Dark Mode – ترند ===== */
-body.dark-mode .capsule-card {
-  background-color: #1f1f1f !important;
-  color: #eee !important;
-  border: 1px solid #333;
-}
-body.dark-mode .capsule-card * {
-  color: #eee !important;
-}
-body.dark-mode .capsule-card .card-title {
-  color: #ff5722 !important; /* نارنجی جذاب برای عنوان */
-  font-weight: 600;
-}
-body.dark-mode .capsule-card .card-text {
-  color: #ffc107 !important; /* طلایی روشن برای توضیح */
-}
-
-/* ===== Flashcards Dark Mode ===== */
-body.dark-mode .flashcard {
-  background-color: #222 !important;
-  color: #00e5ff !important; /* آبی روشن جذاب */
-  font-weight: 500;
-  text-shadow: 0 1px 2px rgba(0,0,0,0.5);
-}
-
-/* ===== Quiz Container Dark Mode ===== */
-body.dark-mode #quizContainer {
-  background-color: #222 !important;
-  color: #ffeb3b !important; /* طلایی روشن */
-}
-
-/* ===== Forms / Create & Edit Capsule Dark Mode ===== */
-body.dark-mode #author,
-body.dark-mode #author .card,
-body.dark-mode #author textarea,
-body.dark-mode #author input,
-body.dark-mode #author select {
-  background-color: #1f1f1f !important; /* تاریک و حرفه‌ای */
-  color: #eee !important;              /* متن روشن */
-  border-color: #444 !important;       /* مرز حرفه‌ای */
-}
-body.dark-mode #author label {
-  color: #ffeb3b !important; /* برچسب‌ها رنگ جذاب */
-}
-body.dark-mode #author h5 {
-  color: #ff5722 !important; /* عناوین Notes / Flashcards / Quiz */
-  font-weight: 600;
-}
-body.dark-mode #author button {
-  color: #fff !important;
-  background-color: #ff5722 !important;
-  border-color: #ff5722 !important;
-}
-body.dark-mode #author button:hover {
-  background-color: #ff784e !important;
-  border-color: #ff784e !important;
-}
-
-/* ===== Forms Dark Mode (input, textarea, select) ===== */
-body.dark-mode input,
-body.dark-mode textarea,
-body.dark-mode select {
-  background-color: #333 !important;
-  color: #fff !important;
-  border-color: #555 !important;
-}
-body.dark-mode .form-control:focus,
-body.dark-mode .form-select:focus {
-  background-color: #333 !important;
-  color: #fff !important;
-  border-color: #ff5722 !important;
-}
-
-/* ===== All Text Override در دارک مود ===== */
-body.dark-mode * {
-  color: #eee !important;
+body.dark-mode footer {
+  background-color: #202020;
+  color: #bbb;
 }
