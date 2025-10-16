@@ -1,4 +1,3 @@
-
 /* ===== Body & Theme ===== */
 body.light-mode {
   background-color: #f9f9f9;
@@ -166,7 +165,34 @@ body.dark-mode #quizContainer {
   color: #ffeb3b !important; /* طلایی روشن */
 }
 
-/* ===== Forms Dark Mode ===== */
+/* ===== Forms / Create & Edit Capsule Dark Mode ===== */
+body.dark-mode #author,
+body.dark-mode #author .card,
+body.dark-mode #author textarea,
+body.dark-mode #author input,
+body.dark-mode #author select {
+  background-color: #1f1f1f !important; /* تاریک و حرفه‌ای */
+  color: #eee !important;              /* متن روشن */
+  border-color: #444 !important;       /* مرز حرفه‌ای */
+}
+body.dark-mode #author label {
+  color: #ffeb3b !important; /* برچسب‌ها رنگ جذاب */
+}
+body.dark-mode #author h5 {
+  color: #ff5722 !important; /* عناوین Notes / Flashcards / Quiz */
+  font-weight: 600;
+}
+body.dark-mode #author button {
+  color: #fff !important;
+  background-color: #ff5722 !important;
+  border-color: #ff5722 !important;
+}
+body.dark-mode #author button:hover {
+  background-color: #ff784e !important;
+  border-color: #ff784e !important;
+}
+
+/* ===== Forms Dark Mode (input, textarea, select) ===== */
 body.dark-mode input,
 body.dark-mode textarea,
 body.dark-mode select {
