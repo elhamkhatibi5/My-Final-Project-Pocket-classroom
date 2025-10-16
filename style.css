@@ -1,56 +1,180 @@
-
-/* ===== Body & Hero Background ===== */
-body {
-  background-color: #f0f4f8; /* روشن و ملایم */
-  transition: background 0.4s, color 0.4s;
-  min-height: 100vh;
-  scroll-behavior: smooth;
+/* ===== Body & Theme ===== */
+body.light-mode {
+  background-color: #f9f9f9;
+  color: #111;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  transition: background 0.3s, color 0.3s;
+}
+body.dark-mode {
+  background-color: #181818;
+  color: #eee;
 }
 
-.hero-bg {
-  background-image: url("https://images.unsplash.com/photo-1524995997946-a1c2e315a42f");
-  background-size: cover;
-  background-position: center;
-  filter: brightness(0.35) blur(1.5px); /* روشن و کم‌رنگ */
-  position: fixed;
-  inset: 0;
-  z-index: -1;
+/* ===== Navbar ===== */
+.navbar {
+  background-color: #fff;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.1);
+  color: #111;
+}
+body.dark-mode .navbar {
+  background-color: #202020;
+  color: #eee;
+}
+.navbar .navbar-brand {
+  display: flex;
+  align-items: center;
+  font-weight: bold;
+}
+.navbar .nav-link {
+  margin-right: 10px;
+  font-weight: 500;
+}
+.navbar .btn-outline-light {
+  color: #111;
+}
+body.dark-mode .btn-outline-light {
+  color: #eee;
+  border-color: #555;
 }
 
-/* ===== Capsule Cards ===== */
+/* ===== Sidebar ===== */
+#sidebar {
+  background-color: #fff;
+  height: 100vh;
+  padding-top: 1rem;
+  border-right: 1px solid #ddd;
+  position: sticky;
+  top: 0;
+  transition: background 0.3s;
+}
+body.dark-mode #sidebar {
+  background-color: #202020;
+  border-color: #333;
+}
+#sidebar a {
+  display: flex;
+  align-items: center;
+  padding: 0.6rem 1rem;
+  color: #111;
+  text-decoration: none;
+  font-weight: 500;
+  transition: background 0.2s;
+}
+body.dark-mode #sidebar a {
+  color: #eee;
+}
+#sidebar a:hover {
+  background-color: #f1f1f1;
+}
+body.dark-mode #sidebar a:hover {
+  background-color: #333;
+}
+
+/* ===== Capsule Grid (YouTube Style Cards) ===== */
+#capsuleGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 1rem;
+  padding: 1rem 0;
+}
+
 .capsule-card {
-  background-color: rgba(255,255,255,0.85); /* کمی شفاف */
+  background-color: #fff;
   border-radius: 12px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
-  padding: 15px;
-  margin: 10px; /* فاصله بین کارت‌ها */
-  color: #222;
-  text-shadow: 0 1px 2px rgba(0,0,0,0.1);
-  transition: all 0.3s ease;
+  overflow: hidden;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s;
 }
-
+body.dark-mode .capsule-card {
+  background-color: #282828;
+  color: #eee;
+}
 .capsule-card:hover {
   transform: translateY(-3px);
-  box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+  box-shadow: 0 6px 15px rgba(0,0,0,0.2);
+}
+.capsule-card img {
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+}
+.capsule-card .card-body {
+  padding: 0.6rem 0.8rem;
+}
+.capsule-card .card-title {
+  font-size: 0.95rem;
+  font-weight: 600;
+  margin-bottom: 0.2rem;
+}
+.capsule-card .card-text {
+  font-size: 0.8rem;
+  color: #555;
+}
+body.dark-mode .capsule-card .card-text {
+  color: #bbb;
 }
 
 /* ===== Flashcards ===== */
 .flashcard {
   width: 280px;
-  height: 180px;
+  height: 160px;
   border-radius: 12px;
-  background-color: rgba(255,255,255,0.85);
-  color: #222;
+  background-color: #fff;
+  color: #111;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 1.2rem;
+  font-size: 1.1rem;
   font-weight: 500;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
   cursor: pointer;
-  transition: transform 0.6s;
+  transition: transform 0.5s, box-shadow 0.3s;
+  margin: 10px;
   perspective: 1000px;
-  margin: 10px; /* فاصله بین flashcard ها */
-  text-shadow: 0 1px 2px rgba(0,0,0,0.1);
+  text-align: center;
+  padding: 10px;
+}
+.flashcard:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+}
+body.dark-mode .flashcard {
+  background-color: #282828;
+  color: #eee;
+}
+
+/* ===== Quiz Container ===== */
+#quizContainer {
+  background-color: #fff;
+  border-radius: 12px;
+  padding: 1rem;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+body.dark-mode #quizContainer {
+  background-color: #282828;
+  color: #eee;
+}
+
+/* ===== Buttons ===== */
+.btn {
+  border-radius: 6px;
+  font-weight: 500;
+  transition: background 0.2s, transform 0.2s;
+}
+.btn:hover {
+  opacity: 0.9;
+  transform: translateY(-1px);
+}
+
+/* ===== Footer ===== */
+footer {
+  background-color: #fff;
+  color: #555;
+  padding: 1rem 0;
+  text-align: center;
+}
+body.dark-mode footer {
+  background-color: #202020;
+  color: #bbb;
 }
