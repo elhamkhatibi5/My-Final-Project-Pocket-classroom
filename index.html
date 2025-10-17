@@ -13,24 +13,19 @@
   <!-- Hero Background -->
   <div class="hero-bg"></div>
 
-  <!-- Navbar -->
+  <!-- Navbar بدون همبرگر -->
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top shadow">
     <div class="container-fluid">
       <a class="navbar-brand d-flex align-items-center" href="#">
         <i class="bi bi-mortarboard-fill me-2 fs-4 text-warning"></i>
         <strong>Pocket Classroom</strong>
       </a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-          <li class="nav-item"><a class="nav-link" href="#library"><i class="bi bi-journal-bookmark"></i> Library</a></li>
-          <li class="nav-item"><a class="nav-link" href="#author"><i class="bi bi-pencil-square"></i> Author</a></li>
-          <li class="nav-item"><a class="nav-link" href="#learn"><i class="bi bi-lightbulb"></i> Learn</a></li>
-        </ul>
-        <button id="themeToggle" class="btn btn-outline-light btn-sm"><i class="bi bi-moon-stars"></i> Dark</button>
-      </div>
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0 d-flex flex-row">
+        <li class="nav-item me-3"><a class="nav-link" href="#library"><i class="bi bi-journal-bookmark"></i> Library</a></li>
+        <li class="nav-item me-3"><a class="nav-link" href="#author"><i class="bi bi-pencil-square"></i> Author</a></li>
+        <li class="nav-item"><a class="nav-link" href="#learn"><i class="bi bi-lightbulb"></i> Learn</a></li>
+      </ul>
+      <button id="themeToggle" class="btn btn-outline-light btn-sm"><i class="bi bi-moon-stars"></i> Dark</button>
     </div>
   </nav>
 
@@ -77,7 +72,6 @@
         </div>
       </form>
 
-      <!-- Notes / Flashcards / Quiz -->
       <div class="mb-3">
         <h5><i class="bi bi-sticky"></i> Notes</h5>
         <textarea id="notesInput" class="form-control mb-3" rows="5" placeholder="Write each note on a new line..."></textarea>
@@ -101,14 +95,12 @@
       <h3 class="mb-3"><i class="bi bi-lightbulb text-info"></i> Learn Mode</h3>
       <select id="learnSelector" class="form-select w-auto mb-3"></select>
 
-      <!-- Notes Tab -->
       <div id="learn-notes" class="mb-4">
         <h5><i class="bi bi-journal"></i> Notes</h5>
         <input type="text" id="searchNotes" class="form-control mb-2" placeholder="Search notes...">
         <ol id="notesList" class="list-group list-group-numbered"></ol>
       </div>
 
-      <!-- Flashcards Tab -->
       <div id="learn-flashcards" class="text-center mb-4">
         <h5><i class="bi bi-card-text"></i> Flashcards</h5>
         <div id="flashcardDisplay" class="flashcard mx-auto my-3">Click to Flip</div>
@@ -123,7 +115,6 @@
         </div>
       </div>
 
-      <!-- Quiz Tab -->
       <div id="learn-quiz">
         <h5><i class="bi bi-patch-question"></i> Quiz</h5>
         <div id="quizContainer" class="card p-3 shadow-sm"></div>
@@ -143,5 +134,20 @@
   <script src="author.js"></script>
   <script src="learn.js"></script>
   <script src="main.js"></script>
+
+  <!-- Dark/Light Mode Script -->
+  <script>
+    const themeToggle = document.getElementById('themeToggle');
+    // Load saved theme
+    if(localStorage.getItem('pc_theme') === 'dark'){
+      document.body.classList.add('dark-mode');
+      document.body.classList.remove('light-mode');
+    }
+    themeToggle.addEventListener('click', ()=>{
+      document.body.classList.toggle('dark-mode');
+      document.body.classList.toggle('light-mode');
+      localStorage.setItem('pc_theme', document.body.classList.contains('dark-mode') ? 'dark' : 'light');
+    });
+  </script>
 </body>
 </html>
