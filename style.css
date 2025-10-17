@@ -1,56 +1,47 @@
 
-/* ===== Body & Hero Background ===== */
 body {
-  background-color: #f0f4f8; /* روشن و ملایم */
-  transition: background 0.4s, color 0.4s;
-  min-height: 100vh;
-  scroll-behavior: smooth;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-}
-
-.hero-bg {
-  background-image: url("https://images.unsplash.com/photo-1524995997946-a1c2e315a42f");
-  background-size: cover;
-  background-position: center;
-  filter: brightness(0.35) blur(1.5px); /* روشن و کم‌رنگ */
-  position: fixed;
-  inset: 0;
-  z-index: -1;
-}
-
-/* ===== Capsule Cards ===== */
-.capsule-card {
-  background-color: rgba(255,255,255,0.85); /* کمی شفاف */
-  border-radius: 12px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
-  padding: 15px;
-  margin: 10px; /* فاصله بین کارت‌ها */
+  font-family: 'Inter', sans-serif;
+  background-color: #fff;
   color: #222;
-  text-shadow: 0 1px 2px rgba(0,0,0,0.1);
-  transition: all 0.3s ease;
+  line-height: 1.6;
 }
 
-.capsule-card:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+.navbar .nav-link {
+  font-weight: 500;
+  transition: color 0.2s ease;
 }
 
-/* ===== Flashcards ===== */
+.navbar .nav-link.active {
+  color: #198754 !important;
+  border-bottom: 2px solid #198754;
+}
+
+.navbar .nav-link:hover {
+  color: #198754;
+}
+
+.page-section {
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
 .flashcard {
-  width: 280px;
-  height: 180px;
+  background: #f8f9fa;
   border-radius: 12px;
-  background-color: rgba(255,255,255,0.85);
-  color: #222;
+  padding: 40px;
+  width: 320px;
+  min-height: 180px;
+  cursor: pointer;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 1.2rem;
   font-weight: 500;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
-  cursor: pointer;
-  transition: transform 0.6s;
-  perspective: 1000px;
-  margin: 10px; /* فاصله بین flashcard ها */
-  text-shadow: 0 1px 2px rgba(0,0,0,0.1);
+}
+
+.btn-success, .btn-outline-success {
+  border-radius: 10px;
+}
+
+footer {
+  background: #fff;
 }
