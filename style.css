@@ -1,47 +1,168 @@
 
-body {
-  font-family: 'Inter', sans-serif;
-  background-color: #fff;
-  color: #222;
-  line-height: 1.6;
+/* ===== Body / Theme ===== */
+body.light-mode {
+  background-color: #f4f5f7;
+  color: #212529;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-.navbar .nav-link {
+body.dark-mode {
+  background-color: #121212;
+  color: #f8f9fa;
+}
+
+/* ===== Links ===== */
+a, a:hover {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* ===== Hero Background ===== */
+.hero-bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 220px;
+  background: linear-gradient(135deg, #6a11cb, #2575fc);
+  z-index: -1;
+  border-bottom-left-radius: 30px;
+  border-bottom-right-radius: 30px;
+}
+
+/* ===== Navbar ===== */
+.navbar-dark .navbar-nav .nav-link {
+  color: #f8f9fa;
   font-weight: 500;
-  transition: color 0.2s ease;
+  transition: color 0.2s;
 }
 
-.navbar .nav-link.active {
-  color: #198754 !important;
-  border-bottom: 2px solid #198754;
+.navbar-dark .navbar-nav .nav-link:hover,
+.navbar-dark .navbar-nav .nav-link.active {
+  color: #ffd700;
 }
 
-.navbar .nav-link:hover {
-  color: #198754;
+/* ===== Main Container ===== */
+main.container {
+  padding-top: 2rem;
 }
 
-.page-section {
-  transition: opacity 0.3s ease, transform 0.3s ease;
+/* ===== Section Titles ===== */
+h3 {
+  font-size: 1.8rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
 }
 
-.flashcard {
-  background: #f8f9fa;
+/* ===== Library Cards ===== */
+#capsuleGrid .card {
   border-radius: 12px;
-  padding: 40px;
-  width: 320px;
-  min-height: 180px;
-  cursor: pointer;
-  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+#capsuleGrid .card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+}
+
+/* Card Header Badges */
+.card .badge {
+  font-size: 0.8rem;
+  font-weight: 500;
+}
+
+/* Progress Bars */
+.progress {
+  height: 8px;
+  border-radius: 5px;
+}
+
+.progress-bar {
+  font-size: 0.7rem;
+}
+
+/* ===== Flashcards ===== */
+.flashcard {
+  width: 300px;
+  height: 180px;
+  background-color: #ffffff;
+  color: #212529;
+  border-radius: 15px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.15);
   display: flex;
   align-items: center;
   justify-content: center;
-  font-weight: 500;
+  cursor: pointer;
+  user-select: none;
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+  perspective: 1000px;
+  margin: 0 auto;
+  padding: 1rem;
+  text-align: center;
 }
 
-.btn-success, .btn-outline-success {
-  border-radius: 10px;
+body.dark-mode .flashcard {
+  background-color: #1e1e1e;
+  color: #f8f9fa;
 }
 
-footer {
-  background: #fff;
+/* ===== Buttons ===== */
+.btn {
+  transition: all 0.2s;
+}
+.btn:hover {
+  transform: translateY(-2px);
+}
+
+/* ===== Notes List ===== */
+#notesList li {
+  padding: 0.5rem 0.75rem;
+  margin-bottom: 0.3rem;
+  border-radius: 8px;
+  background-color: #ffffff;
+  list-style-position: inside;
+}
+
+body.dark-mode #notesList li {
+  background-color: #1e1e1e;
+}
+
+/* ===== Quiz Cards ===== */
+#quizContainer .card {
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  margin-bottom: 1rem;
+  padding: 1rem;
+  background-color: #ffffff;
+}
+
+body.dark-mode #quizContainer .card {
+  background-color: #1e1e1e;
+}
+
+/* ===== Responsive Adjustments ===== */
+@media (max-width: 768px) {
+  .flashcard {
+    width: 90%;
+    height: 180px;
+  }
+  #capsuleGrid .card {
+    margin-bottom: 1rem;
+  }
+  .navbar-nav {
+    gap: 0.5rem;
+  }
+}
+
+/* ===== Smooth Hover / Focus ===== */
+button, input, select, textarea {
+  outline: none;
+  transition: all 0.2s;
+}
+
+button:focus, input:focus, select:focus, textarea:focus {
+  box-shadow: 0 0 0 3px rgba(100,149,237,0.3);
+  border-color: #6495ed;
 }
