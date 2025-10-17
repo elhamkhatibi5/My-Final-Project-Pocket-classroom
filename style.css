@@ -1,67 +1,38 @@
 
 /* ===== Body & Hero Background ===== */
 body {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f0f4f8; /* روشن و ملایم */
+  transition: background 0.4s, color 0.4s;
   min-height: 100vh;
   scroll-behavior: smooth;
-  transition: background 0.4s, color 0.4s;
-  background-color: #f0f4f8;
-  color: #111;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 .hero-bg {
-  position: fixed;
-  inset: 0;
-  z-index: -1;
   background-image: url("https://images.unsplash.com/photo-1524995997946-a1c2e315a42f");
   background-size: cover;
   background-position: center;
-  filter: brightness(0.35) blur(1.5px);
-}
-
-/* ===== Dark Mode ===== */
-body.dark-mode {
-  background-color: #181818;
-  color: #eee;
-}
-
-body.dark-mode .hero-bg {
-  filter: brightness(0.2) blur(1.5px);
-}
-
-/* ===== Navbar ===== */
-.navbar {
-  transition: background 0.3s, color 0.3s;
-}
-body.dark-mode .navbar {
-  background-color: #202020 !important;
-  color: #eee;
-}
-.navbar .nav-link {
-  transition: color 0.3s;
-}
-body.dark-mode .nav-link {
-  color: #eee !important;
+  filter: brightness(0.35) blur(1.5px); /* روشن و کم‌رنگ */
+  position: fixed;
+  inset: 0;
+  z-index: -1;
 }
 
 /* ===== Capsule Cards ===== */
 .capsule-card {
-  background-color: rgba(255,255,255,0.85);
+  background-color: rgba(255,255,255,0.85); /* کمی شفاف */
   border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-  transition: transform 0.3s, box-shadow 0.3s, background 0.3s;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+  padding: 15px;
+  margin: 10px; /* فاصله بین کارت‌ها */
+  color: #222;
+  text-shadow: 0 1px 2px rgba(0,0,0,0.1);
+  transition: all 0.3s ease;
 }
+
 .capsule-card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 8px 20px rgba(0,0,0,0.12);
-}
-body.dark-mode .capsule-card {
-  background-color: #282828;
-  color: #eee;
-}
-.capsule-card .card-title,
-.capsule-card .card-text {
-  transition: color 0.3s;
+  transform: translateY(-3px);
+  box-shadow: 0 6px 15px rgba(0,0,0,0.1);
 }
 
 /* ===== Flashcards ===== */
@@ -70,77 +41,16 @@ body.dark-mode .capsule-card {
   height: 180px;
   border-radius: 12px;
   background-color: rgba(255,255,255,0.85);
-  color: #111;
+  color: #222;
   display: flex;
   align-items: center;
   justify-content: center;
   font-size: 1.2rem;
   font-weight: 500;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
   cursor: pointer;
-  transition: transform 0.6s, box-shadow 0.3s, background 0.3s;
+  transition: transform 0.6s;
   perspective: 1000px;
-  margin: 10px auto;
-  text-align: center;
-}
-.flashcard:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 8px 20px rgba(0,0,0,0.12);
-}
-body.dark-mode .flashcard {
-  background-color: #282828;
-  color: #eee;
-}
-
-/* ===== Quiz Container ===== */
-#quizContainer {
-  background-color: rgba(255,255,255,0.85);
-  border-radius: 12px;
-  padding: 1rem;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-  transition: background 0.3s, color 0.3s;
-}
-body.dark-mode #quizContainer {
-  background-color: #282828;
-  color: #eee;
-}
-
-/* ===== Forms ===== */
-input, textarea, select {
-  transition: background 0.3s, color 0.3s, border-color 0.3s;
-}
-body.dark-mode input, 
-body.dark-mode textarea, 
-body.dark-mode select {
-  background-color: #333;
-  color: #eee;
-  border-color: #555;
-}
-body.dark-mode input:focus, 
-body.dark-mode textarea:focus, 
-body.dark-mode select:focus {
-  border-color: #888;
-  background-color: #333;
-}
-
-/* ===== Buttons ===== */
-.btn {
-  border-radius: 6px;
-  font-weight: 500;
-  transition: transform 0.2s, opacity 0.2s;
-}
-.btn:hover {
-  transform: translateY(-1px);
-  opacity: 0.9;
-}
-
-/* ===== Footer ===== */
-footer {
-  background-color: #fff;
-  color: #555;
-  transition: background 0.3s, color 0.3s;
-}
-body.dark-mode footer {
-  background-color: #202020;
-  color: #bbb;
+  margin: 10px; /* فاصله بین flashcard ها */
+  text-shadow: 0 1px 2px rgba(0,0,0,0.1);
 }
